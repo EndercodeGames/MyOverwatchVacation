@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+background-color:   black;
+}
+img {
+margin: center;
+width: 80%
+}
+h1 {
+text-align: center;
+color: orange;
+}
+.navitem a {
+    display: block;
+    
+    color: orange;
+     text-decoration: none;
+     padding: 8px 16px
+     }
+     .navitem a:hover {
+     background-color: orange;
+     color: black;
+     }
+</style>
+</head>
+
+<body>
+<h1>Welcome! Come and take a trip around the world to visit all the real life locations of 
+the maps in Overwatch.</h1>
+<img src="OverwatchHomepage.png">
+<ul id="navbar">
+<li class="navitem"><a class="active" href="Overwatchvacationhomepage.html">Home Page</a></li>
+<li class="navitem"><a href="Kingsrow.html"> King's Row</a></li>
+<li class="navitem"><a href="Dorado.html"> El Dorado<a></li>
+<li class="navitem"><a href="Creditspage.html"> Give Credit where credit is due</a></li>
+</ul>
+
+<div id="map" style="width:100%;height:500px"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLqGzYUSYWXU_mjiFW1VQVy6wTNfQvx4U"
+    async defer></script> 
+function myMap() {
+  var myCenter = new google.maps.LatLng(51.508742,-0.120850);
+  //myCenter is a latitude/longitude object. It stores a point.
+  var mapCanvas = document.getElementById("map");
+  // stores the link that the div will go in.
+  var mapOptions = {
+  center: myCenter,
+   zoom: 2
+   };
+  //stores the options for the map. note, we used
+  //myCenter, the variable storing the point, in
+  //the center option.
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+  // creates the map itself. we gave it the variables for
+  // the mapCanvas (where to put it) and mapOptions (what 
+  //it will look like)
+  var marker = new google.maps.Marker({position:myCenter});
+  // creates a new marker at the myCenter location (we used
+  //that myCenter LatLng variable again).
+  marker.setMap(map);
+  //follows object.method() notation.
+  // the marker is the object. it's being told to
+  //set its map to the map we created two lines up.
+  // this PUTS the marker on the map.
+  
+  //below this creates a second point
+ var origin = new google.maps.LatLng(37.7713259,23.1358774);
+ var marker2 = new google.maps.Marker({position:origin});
+ marker2.setMap(map);
+ 
+ var origin = new google.maps.LatLng(18.4508806,-66.3207307)
+ var marker3 = new google.maps.Marker({position:origin});
+ marker3.setMap(map);
+}
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+
+</body>
+</html>
