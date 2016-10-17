@@ -38,8 +38,9 @@ color: goldenrod;
 </ul>
 <div id="map" style="width:100%;height:500px"></div>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLqGzYUSYWXU_mjiFW1VQVy6wTNfQvx4U"
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLqGzYUSYWXU_mjiFW1VQVy6wTNfQvx4U&callback=myMap"
     async defer></script> 
+    <script>
 function myMap() {
   var myCenter = new google.maps.LatLng(51.5307923,-0.1235207);
   //myCenter is a latitude/longitude object. It stores a point.
@@ -73,10 +74,8 @@ function myMap() {
  marker2.setMap(map);
  
 }
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLqGzYUSYWXU_mjiFW1VQVy6wTNfQvx4U&callback=myMap"></script> 
-</script>
 
-<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+    </script>
 <p>King's Row and more formally known in the real world as King's Cross, is a colorful 
     city with a great culture and a marvelous railway station.</P>
     <h2> Cuisine</h2>
